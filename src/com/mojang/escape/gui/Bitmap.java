@@ -10,7 +10,7 @@ public class Bitmap {
 	private static final String chars = "" + //
 			"ABCDEFGHIJKLMNOPQRSTUVWXYZ.,!?\"'/\\<>()[]{}" + //
 			"abcdefghijklmnopqrstuvwxyz_               " + //
-			"0123456789+-=*:;÷≈ƒÂ                      " + //
+			"0123456789+-=*:;√ñ√Ö√Ñ√•                      " + //
 			"";
 
 	public Bitmap(int width, int height) {
