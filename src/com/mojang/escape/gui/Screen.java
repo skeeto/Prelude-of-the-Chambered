@@ -78,11 +78,11 @@ public class Screen extends Bitmap {
 
 			draw(Art.panel, 0, height - PANEL_HEIGHT, 0, 0, width, PANEL_HEIGHT, Art.getCol(0x707070));
 
-			draw("å", 3, height - 26 + 0, 0x00ffff);
+			draw("Ã¥", 3, height - 26 + 0, 0x00ffff);
 			draw("" + game.player.keys + "/4", 10, height - 26 + 0, 0xffffff);
-			draw("Ä", 3, height - 26 + 8, 0xffff00);
+			draw("Ã„", 3, height - 26 + 8, 0xffff00);
 			draw("" + game.player.loot, 10, height - 26 + 8, 0xffffff);
-			draw("Å", 3, height - 26 + 16, 0xff0000);
+			draw("Ã…", 3, height - 26 + 16, 0xff0000);
 			draw("" + game.player.health, 10, height - 26 + 16, 0xffffff);
 
 			for (int i = 0; i < 8; i++) {
