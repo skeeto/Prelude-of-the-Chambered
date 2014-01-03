@@ -10,6 +10,7 @@ Notch's Prelude of the Chambered 48-hour game
 ##How to run 
 * 1) Launch terminal
 * 2) Go to the root project 
-* 3) Type : ant run
+* 3) Type : `ant run`
+
 
 
