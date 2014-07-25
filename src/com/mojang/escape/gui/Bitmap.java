@@ -34,21 +34,6 @@ public class Bitmap {
 		}
 	}
 
-	public void flipDraw(Bitmap bitmap, int xOffs, int yOffs) {
-		for (int y = 0; y < bitmap.height; y++) {
-			int yPix = y + yOffs;
-			if (yPix < 0 || yPix >= height) continue;
-
-			for (int x = 0; x < bitmap.width; x++) {
-				int xPix = xOffs + bitmap.width - x - 1;
-				if (xPix < 0 || xPix >= width) continue;
-
-				int src = bitmap.pixels[x + y * bitmap.width];
-				pixels[xPix + yPix * width] = src;
-			}
-		}
-	}
-
 	public void draw(Bitmap bitmap, int xOffs, int yOffs, int xo, int yo, int w, int h, int col) {
 		for (int y = 0; y < h; y++) {
 			int yPix = y + yOffs;
