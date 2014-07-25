@@ -24,7 +24,6 @@ public class PitBlock extends Block {
 	}
 
 	public boolean blocks(Entity entity) {
-		if (entity instanceof BoulderEntity) return false;
-		return blocksMotion;
-	}
+        return !(entity instanceof BoulderEntity) && blocksMotion;
+    }
 }

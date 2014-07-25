@@ -24,9 +24,8 @@ public class WaterBlock extends Block {
 		if (entity instanceof Player) {
 			if (((Player) entity).getSelectedItem() == Item.flippers) return false;
 		}
-		if (entity instanceof Bullet) return false;
-		return blocksMotion;
-	}
+        return !(entity instanceof Bullet) && blocksMotion;
+    }
 
 	public double getFloorHeight(Entity e) {
 		return -0.5;
