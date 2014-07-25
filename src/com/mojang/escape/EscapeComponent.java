@@ -7,6 +7,8 @@ import javax.swing.*;
 
 import com.mojang.escape.gui.Screen;
 
+import static javax.swing.JFrame.*;
+
 public class EscapeComponent extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 
