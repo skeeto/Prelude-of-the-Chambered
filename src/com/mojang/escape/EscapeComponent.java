@@ -7,6 +7,8 @@ import javax.swing.*;
 
 import com.mojang.escape.gui.Screen;
 
+import static javax.swing.JFrame.*;
+
 public class EscapeComponent extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 
@@ -131,9 +133,7 @@ public class EscapeComponent extends Canvas implements Runnable {
 
 		screen.render(game, hasFocus());
 
-		for (int i = 0; i < WIDTH * HEIGHT; i++) {
-			pixels[i] = screen.pixels[i];
-		}
+        System.arraycopy(screen.pixels, 0, pixels, 0, WIDTH * HEIGHT);
 
 		Graphics g = bs.getDrawGraphics();
 		g.fillRect(0, 0, getWidth(), getHeight());
@@ -154,7 +154,7 @@ public class EscapeComponent extends Canvas implements Runnable {
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
 		game.start();

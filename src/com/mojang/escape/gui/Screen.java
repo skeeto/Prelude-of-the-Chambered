@@ -24,8 +24,6 @@ public class Screen extends Bitmap {
 		}
 	}
 
-	int time = 0;
-
 	public void render(Game game, boolean hasFocus) {
 		if (game.level == null) {
 			fill(0, 0, width, height, 0);
@@ -42,7 +40,7 @@ public class Screen extends Bitmap {
 				}
 			} else {
 				viewport.render(game);
-				viewport.postProcess(game.level);
+				viewport.postProcess();
 
 				Block block = game.level.getBlock((int) (game.player.x + 0.5), (int) (game.player.z + 0.5));
 				if (block.messages != null && hasFocus) {

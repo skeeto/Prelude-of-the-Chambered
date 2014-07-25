@@ -83,16 +83,15 @@ public class Entity {
 		for (int z = zc - rr; z <= zc + rr; z++) {
 			for (int x = xc - rr; x <= xc + rr; x++) {
 				List<Entity> es = level.getBlock(x, z).entities;
-				for (int i = 0; i < es.size(); i++) {
-					Entity e = es.get(i);
-					if (e == this) continue;
+                for (Entity e : es) {
+                    if (e == this) continue;
 
-					if (!e.blocks(this, this.x, this.z, r) && e.blocks(this, xx, yy, r)) {
-						e.collide(this);
-						this.collide(e);
-						return false;
-					}
-				}
+                    if (!e.blocks(this, this.x, this.z, r) && e.blocks(this, xx, yy, r)) {
+                        e.collide(this);
+                        this.collide(e);
+                        return false;
+                    }
+                }
 			}
 		}
 		return true;

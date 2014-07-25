@@ -18,7 +18,6 @@ public class SpiritWallBlock extends Block {
 	}
 
 	public boolean blocks(Entity entity) {
-		if (entity instanceof Bullet) return false;
-		return super.blocks(entity);
-	}
+        return !(entity instanceof Bullet) && super.blocks(entity);
+    }
 }

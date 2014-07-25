@@ -27,7 +27,6 @@ public class LootBlock extends Block {
 	}
 
 	public boolean blocks(Entity entity) {
-		if (entity instanceof Player) return false;
-		return blocksMotion;
-	}
+        return !(entity instanceof Player) && blocksMotion;
+    }
 }

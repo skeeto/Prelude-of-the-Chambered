@@ -285,7 +285,7 @@ public class Bitmap3D extends Bitmap {
 		}
 	}
 
-	public void postProcess(Level level) {
+	public void postProcess() {
 		for (int i = 0; i < width * height; i++) {
 			double zl = zBuffer[i];
 			if (zl < 0) {
