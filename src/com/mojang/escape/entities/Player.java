@@ -166,11 +166,10 @@ public class Player extends Entity {
 		for (int z = zc - rr; z <= zc + rr; z++) {
 			for (int x = xc - rr; x <= xc + rr; x++) {
 				List<Entity> es = level.getBlock(x, z).entities;
-				for (int i = 0; i < es.size(); i++) {
-					Entity e = es.get(i);
-					if (e == this) continue;
-					possibleHits.add(e);
-				}
+                for (Entity e : es) {
+                    if (e == this) continue;
+                    possibleHits.add(e);
+                }
 			}
 		}
 
@@ -178,15 +177,14 @@ public class Player extends Entity {
 		for (int i = 0; i < divs; i++) {
 			double xx = x + xa * i / divs;
 			double zz = z + za * i / divs;
-			for (int j = 0; j < possibleHits.size(); j++) {
-				Entity e = possibleHits.get(j);
-				if (e.contains(xx, zz)) {
-					if (e.use(this, items[selectedSlot])) {
-						return;
-					}
-				}
+            for (Entity e : possibleHits) {
+                if (e.contains(xx, zz)) {
+                    if (e.use(this, items[selectedSlot])) {
+                        return;
+                    }
+                }
 
-			}
+            }
 			int xt = (int) (xx + 0.5);
 			int zt = (int) (zz + 0.5);
 			if (xt != (int) (x + 0.5) || zt != (int) (z + 0.5)) {
@@ -211,12 +209,12 @@ public class Player extends Entity {
 	public void addLoot(Item item) {
 		if (item == Item.pistol) ammo += 20;
 		if (item == Item.potion) potions += 1;
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] == item) {
-				if (level!=null) level.showLootScreen(item);
-				return;
-			}
-		}
+        for (Item item1 : items) {
+            if (item1 == item) {
+                if (level != null) level.showLootScreen(item);
+                return;
+            }
+        }
 
 		for (int i = 0; i < items.length; i++) {
 			if (items[i] == Item.none) {

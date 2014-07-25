@@ -194,10 +194,9 @@ public abstract class Level {
 		for (int z = zc - rr; z <= zc + rr; z++) {
 			for (int x = xc - rr; x <= xc + rr; x++) {
 				List<Entity> es = getBlock(x, z).entities;
-				for (int i = 0; i < es.size(); i++) {
-					Entity e = es.get(i);
-					if (e.isInside(x0, y0, x1, y1)) return true;
-				}
+                for (Entity e : es) {
+                    if (e.isInside(x0, y0, x1, y1)) return true;
+                }
 			}
 		}
 		return false;
@@ -210,10 +209,9 @@ public abstract class Level {
 		for (int z = zc - rr; z <= zc + rr; z++) {
 			for (int x = xc - rr; x <= xc + rr; x++) {
 				List<Entity> es = getBlock(x, z).entities;
-				for (int i = 0; i < es.size(); i++) {
-					Entity e = es.get(i);
-					if (!e.flying && e.isInside(x0, y0, x1, y1)) return true;
-				}
+                for (Entity e : es) {
+                    if (!e.flying && e.isInside(x0, y0, x1, y1)) return true;
+                }
 			}
 		}
 		return false;
